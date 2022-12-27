@@ -1,10 +1,11 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
+  const devMode = process.env.NEXT_PUBLIC_ENVIRONMENT === 'dev'
   return (
-    <Html lang="en">
+    <Html lang='en'>
       <Head />
-      <body>
+      <body className={`${devMode && 'debug-screens'}`}>
         <Main />
         <NextScript />
       </body>
