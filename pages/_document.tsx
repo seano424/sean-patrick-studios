@@ -1,7 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
-  const devMode = process.env.NEXT_PUBLIC_ENVIRONMENT === 'dev'
+  const devMode = process.env.ENVIRONMENT === 'dev'
   return (
     <Html lang='en'>
       <Head />

@@ -1,14 +1,7 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
-import { createClient } from 'next-sanity'
-import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
-
-const client = createClient({
-  projectId: 'lhds5hbh',
-  dataset: 'production',
-  apiVersion: '2022-12-27',
-  useCdn: false,
-})
+import { GetStaticProps } from 'next'
+import { getPets } from '../lib/queries'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -40,8 +33,8 @@ export default function Home({ pets }: PetsProps) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const pets = await client.fetch(`*[_type == "pet"]`)
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
+  const pets = await getPets(preview)
 
   return {
     props: { pets },
