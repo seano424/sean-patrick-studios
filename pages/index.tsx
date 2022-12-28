@@ -1,9 +1,10 @@
 import Head from 'next/head'
-import { Inter } from '@next/font/google'
+import { Inter, Shippori_Mincho } from '@next/font/google'
 import { GetStaticProps } from 'next'
 import { getPets } from '../lib/queries'
 
 const inter = Inter({ subsets: ['latin'] })
+const shippori = Shippori_Mincho({ weight: '400' })
 
 export interface PetsProps {
   pets: {
@@ -28,7 +29,9 @@ export default function Home({ pets }: PetsProps) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className='border border-red-50'>{pets[0].name}</main>
+      <main className="border">
+        <p>hello world</p>
+      </main>
     </>
   )
 }

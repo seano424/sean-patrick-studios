@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Koburi';
+  src: local(''), url('/fonts/GenAKoburiMinchoH-Oblique.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Koburi';
+  src: local(''), url('/fonts/GenAKoburiMinchoH-Regular.ttf') format('truetype');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

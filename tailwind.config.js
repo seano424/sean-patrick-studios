@@ -16,7 +16,11 @@ module.exports = {
         opacity: '100%',
       },
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        koburi: '"Koburi", serif',
+      },
+    },
   },
   plugins: [require('tailwindcss-debug-screens')],
 }
