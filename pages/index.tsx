@@ -1,10 +1,6 @@
-import Head from 'next/head'
-import { Inter, Shippori_Mincho } from '@next/font/google'
 import { GetStaticProps } from 'next'
 import { getPets } from '../lib/queries'
-
-const inter = Inter({ subsets: ['latin'] })
-const shippori = Shippori_Mincho({ weight: '400' })
+import Layout from '@/components/Layout'
 
 export interface PetsProps {
   pets: {
@@ -17,22 +13,11 @@ export interface PetsProps {
   }[]
 }
 
-export default function Home({ pets }: PetsProps) {
+export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Sean Patrick Studios</title>
-        <meta
-          name='description'
-          content="Sean Patrick O'Reilly's Personal Project"
-        />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-      <main className="border">
-        <p>hello world</p>
-      </main>
-    </>
+    <Layout>
+      <p>hello home</p>
+    </Layout>
   )
 }
 
